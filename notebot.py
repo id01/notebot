@@ -8,6 +8,8 @@ import discord
 import asyncio
 # Import leveldb libs
 import plyvel
+# Import token. Note that token.py should exist and assign a variable "mytoken" with the discord token
+from token import mytoken
 
 # Configuration
 helptext = '''Commands are:
@@ -19,7 +21,6 @@ helptext = '''Commands are:
 !del [name] -> Removes note [name]
 ''' # Help menu text
 mychannel = 'ctf-notes' # Discord channel to be active in
-mytoken = 'NDQxMDU2NDY3MzgzMjIyMjcy.Dcqtjg.zgSc8wwiyMyW045S5OI7O3OCZmA' # Discord token
 db = plyvel.DB('notes/', create_if_missing=True) # Compression is integrated
 
 # Init client
